@@ -16,7 +16,7 @@ var triviaQuestions = [
     {question: "After they lose their car, what unattractive and impractical vechicle does the Bluth family use instead?", 
     choices: ["Tandem Bike", "Old Motorcycle with Side Car", "Airport Stair Car", "PT Cruiser"], 
     correctAnswer: 2, 
-    image: ["assets/images/Star-car.png"]
+    image: ["assets/images/Stair-car.png height=200px width=200px"]
     }, 
 
     {question: "What item of clothing does the 'Never Nude' Tobias wear to cover himself?", 
@@ -119,9 +119,10 @@ function next() {
     if ((right + wrong) === questionCount) {
         $("#questions").empty();
         $("#picture-bin").empty(); 
+        $("#answer-bin").empty(); 
+        $(".answer-selector").empty(); 
         $("#answer-bin").append("<p> Correct: " + right + "</p>"); 
         $("#answer-bin").append("<p> Incorrect: " + wrong + "</p>"); 
-        $("reset").css("display", "show"); 
         right = 0; 
         wrong = 0; 
 
@@ -135,9 +136,7 @@ function next() {
 
 $("#start").on("click", function() {
     $("#start").css("display", "none");
-    $("#reset").css("display", "none");  
     displayQuestion(); 
 
 }   
 )
-
